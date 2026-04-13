@@ -19,7 +19,7 @@ function App() {
       }
 
       const result = await response.json(); // get the query result data
-      const rawSelectedRestaurants = result.slice(0, 10); // select only the first 10 restaurants
+      const rawSelectedRestaurants = result.restaurants.slice(0, 10); // select only the first 10 restaurants
       const selectedRestaurants = rawSelectedRestaurants.map((item) => {
         return {
           uniqueName: item.uniqueName,
