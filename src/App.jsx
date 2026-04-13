@@ -36,15 +36,15 @@ function App() {
     } catch (error) {
       console.log(error.message);
     }
+  }
     return (
       <>
         <div className='main-frame'>
           <h3>Restaurant Finder</h3>
-          <SearchBar></SearchBar>
-          <RestaurantList></RestaurantList>
+          <SearchBar onSearch={handleSearch}></SearchBar>
+          <RestaurantList list={restaurantList}></RestaurantList>
         </div>
       </>
     )
   }
-}
   export default App
