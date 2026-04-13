@@ -83,3 +83,7 @@ Unit tests cover the transformation function with 7 core test cases:
 - Missing data fields should show user-friendly defaults
 - Program uses `uniqueName` as React key and assumes this is unique across results
 - Displays results without filtering by e.g. delivery type, opening hours, or ratings
+
+## Improvements
+- Reflect the search parameter (postcode) in the URL of the page for easy sharing/bookmarking/history of the results
+    - As a result, reloading the page would not clear the search
