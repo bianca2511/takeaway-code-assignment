@@ -1,4 +1,5 @@
 import './RestaurantList.css'
+import RestaurantCard from './RestaurantCard'
 // pass the list of restaurant as a prop from App
 function RestaurantList({list}) {
 

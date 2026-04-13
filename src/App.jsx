@@ -26,7 +26,7 @@ function App() {
           name: item.name,
           rating: item.rating.starRating,
           address: item.address.firstLine,
-          cuisines: item.cuisisines.map((cuisine) => cuisine.name)
+          cuisines: item.cuisines.map((cuisine) => cuisine.name)
         }
       });
 
