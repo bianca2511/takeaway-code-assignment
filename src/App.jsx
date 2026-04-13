@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import RestaurantList from './RestaurantList'
 import SearchBar from './SearchBar'
+import { transformRestaurantData } from './utils/restaurantDataTransform'
 
 function App() {
   // state for storing the restaurant list that is fetched
@@ -19,16 +20,9 @@ function App() {
       }
 
       const result = await response.json(); // get the query result data
-      const rawSelectedRestaurants = result.restaurants.slice(0, 10); // select only the first 10 restaurants
-      const selectedRestaurants = rawSelectedRestaurants.map((item) => {
-        return {
-          uniqueName: item.uniqueName,
-          name: item.name,
-          rating: item.rating.starRating,
-          address: item.address.firstLine,
-          cuisines: item.cuisines.map((cuisine) => cuisine.name)
-        }
-      });
+      // use the external transformation function to slice the first 10 results 
+      // and extract the desired fields
+      const selectedRestaurants = transformRestaurantData(result.restaurants);
 
       console.log("The first 10 restaurants are: ");
       console.log(selectedRestaurants);
