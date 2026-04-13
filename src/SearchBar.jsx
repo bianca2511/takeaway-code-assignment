@@ -5,10 +5,10 @@ function SearchBar({ onSearch }) {
     const [postcode, setPostcode] = useState("");
     return (
         <>
-            <div>
+            <div className='search-bar-frame'>
                 <p>Type in a postcode </p>
-                <input type='text' value={postcode} placeholder='e.g. CT12EH' onChange={(e)=>setPostcode(e.target.value)}></input>
-                <button onClick={() => onSearch(postcode)}>Search</button>
+                <input className='search-bar' type='text' value={postcode} placeholder='e.g. CT12EH' onChange={(e)=>setPostcode(e.target.value)}></input>
+                <button className='search-button' onClick={() => onSearch(postcode)}>Search</button>
             </div>
         </>
     )

@@ -1,0 +1,63 @@
+/* Little animation when new cards load in */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    background-color: var(--card-bg);
+    margin-inline: 1rem;
+    margin-block: 0.3rem;
+    padding: 1rem;
+    box-shadow: 1px 1px 1px 1px var(--border-h);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    transition: all 0.3s ease;
+    animation: slideInUp 0.5s ease-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent);
+}
+
+.card-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.card-name {
+    font-weight: bold;
+}
+
+.card-rating {
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.card-address {
+    font-size: smaller;
+    font-style: italic;
+}
+
+.card-cuisines {
+    font-size: small;
+    background-color: var(--accent);
+    border-radius: 5px;
+    color: var(--text-white);
+    padding-inline: 0.5rem;
+}
